@@ -8,7 +8,7 @@ Used as a playground for:
     * ["compress"](https://github.com/penibelst/jekyll-compress-html) (minify) the html
     * explore some other features Jekyll features along the way (constraint, no)
 
-* checking how to achieve [pagespeed](https://developers.google.com/speed/pagespeed/) optimizations and [google search console](https://www.google.com/webmasters/tools/home?hl=en) recommendations with the above, for mobile & pc usage
+* checking how to achieve [pagespeed](https://developers.google.com/speed/pagespeed/insights/?url=kine-valfleury.fr) optimizations and [google search console](https://www.google.com/webmasters/tools/home?hl=en) recommendations with the above, for mobile & pc usage
 
 ## Prerequisites
 * Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
