@@ -2,7 +2,7 @@ Simple website for a physiotherapy practice.
 
 Used as a playground for:
 * build a one page layout using [bootstrap](http://getbootstrap.com/getting-started/#examples)
-* scripted S3 deployment
+* scripted [Amazon S3](https://aws.amazon.com/fr/s3/) deployment
 * using Jekyll to:
     * reduce maintenance on multilingual aspects (see also [here](https://www.sylvaindurand.org/making-jekyll-multilingual/))
     * ["compress"](https://github.com/penibelst/jekyll-compress-html) (minify) the html
@@ -18,12 +18,12 @@ Used as a playground for:
 
 ## Generate
 From the repository:
-* Run `jekyll build` to generate _site - all static files
+* Run `jekyll build` to generate `_site` folder containing the files to deploy (the website itself)
 
 ## Deploy
 * Run deploy.sh to:
-    * gzip the resources
-    * upload to Amazon S3 with appropriate headers
+    * gzip the resources (js, css)
+    * upload to target Amazon S3 bucket with appropriate http headers with which they will be served (cache-control, content-enconding, content-type)
 
 
 
