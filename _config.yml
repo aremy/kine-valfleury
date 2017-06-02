@@ -1,0 +1,126 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+title:
+  fr: "Masseur-Kinésithérapeute Meudon Issy-les-Moulineaux"
+  en: "Physiotherapist Meudon/Issy-les-Moulineaux"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "http://kine-valfleury.fr" # the base hostname & protocol for your site, e.g. http://example.com
+#twitter_username: jekyllrb
+#github_username:  jekyll
+
+# Build settings
+markdown: kramdown
+#theme: minima
+sass:
+    style: compressed
+
+gems:
+  - jekyll-feed
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - deploy.sh
+
+
+description:
+  fr: "Andreea Almajan Masseur-Kinésithérapeute Meudon Issy-les-Moulineaux"
+  en: "Andreea Almajan Physiotherapist Meudon Issy-les-Moulineaux"
+
+keywords:
+    fr: "masseur-kinésithérapeute meudon val-fleury issy-les-moulineaux rendez-vous"
+    en: "Physiotherapy Practice meudon val-fleury issy-les-moulineaux rendez-vous"
+
+index:
+    fr: "en/"
+    en: ""
+
+altlang:
+    fr: en
+    en: fr
+
+physiotherapy:
+    fr: "Kinésithérapie"
+    en: "Physiotherapy"
+
+blogposts:
+  fr: "Dernières Nouvelles"
+  en: "News"
+
+physiotherapy_practice:
+  fr: "Cabinet de Kinésithérapie"
+  en: "Physiotherapy Practice"
+
+physiotherapy_title:
+  fr: "Andreea Almajan - Masseur-Kinésithérapeute D.E."
+  en: "Andreea Almajan - Physical Therapist S.D."
+
+physiotherapy_address:
+  fr: "Meudon 92190 - RER C Val Fleury"
+  en: "Meudon 92190 - RER C Val Fleury"
+
+make_appointment:
+  fr: "Prendre rendez-vous"
+  en: "Make an Appointment"
+
+home:
+  fr: "Accueil"
+  en: "Home"
+
+the_practice:
+  fr: "Le Cabinet"
+  en: "The Practice"
+
+room1:
+  fr: "Salle 1"
+  en: "Room 1"
+room2:
+  fr: "Salle 2"
+  en: "Room 2"
+
+room3:
+  fr: "Salle 3"
+  en: "Room 3"
+
+previous:
+  fr: "Précédent"
+  en: "Previous"
+
+next:
+  fr: "Suivant"
+  en: "Next"
+
+contact:
+  fr: "Contact"
+  en: "Contact"
+
+getting_there:
+  fr: "S'y rendre"
+
+quick_links:
+  fr: "Liens Rapides"
+  en: "Quick Links"
+mk_order:
+  fr: Ordre des Masseur-Kinésithérapeutes
+  en: "Order of Physiotherapists (french)"
+
+phone_nb:
+  fr: 01 45 34 29 73
+  en: +33 1 45 34 29 73
+
+phone_nb_link:
+  fr: 0145342973
+  en: +33145342973

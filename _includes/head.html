@@ -1,0 +1,16 @@
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
+    <meta name="description" content="{{ page.excerpt | default: site.description[page.lang] | strip_html | normalize_whitespace | truncate: 160 | escape }}">
+    <meta name="keywords" content="{{ site.keywords[page.lang] }}">
+    <link rel="shortcut icon" href="/img/favicon.png" />
+    <meta property="og:image" content="/img/favicon.png" />
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
+    <link rel="alternate" type="application/rss+xml" title="{{ site.title[page.lang] | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
