@@ -5,6 +5,5 @@
 layout: home
 lang: en
 ref: home
-title: "Physiotherapist Meudon/Issy-les-Moulineaux"
 ---
 
