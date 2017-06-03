@@ -8,11 +8,6 @@ body {
     font-size: 16px;
 }
 
-table {
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
 h1,
 h2,
 h3,
@@ -86,20 +81,6 @@ banner
     border-radius: 0px;
 }
 
-.navbar-brand {
-    font-size: 32px;
-    font-weight: bold;
-}
-
-.navbar-brand a {
-    color: #fff;
-}
-
-.navbar-brand img {
-    padding-top: 2px;
-    height: 50px !important;
-    margin-top: -16px;
-}
 
 .top-nav-collapse {
     padding: 0;
@@ -190,10 +171,6 @@ banner
     margin: 0 auto;
 }
 
-.text-primary i {
-    padding-top: 8px;
-    display: inline-block;
-}
 
 .embeddedmap {
     border: 0px;
@@ -219,64 +196,9 @@ contact us
     margin-top: 30px;
 }
 
-.btn-form,
-.btn-form:hover,
-.btn-form:focus {
-    background-color: #0cb8b6;
-    color: #fff;
-    border-radius: 0px;
-    padding: 10px 20px;
-}
-
-.br-radius-zero {
-    border-radius: 0px;
-}
-
-.form-control {
-    height: 40px;
-}
-
-.validation {
-    color: red;
-    display: none;
-    margin: 0 0 20px;
-    font-weight: 400;
-    font-size: 13px;
-}
-
-#sendmessage {
-    color: green;
-    border: 1px solid green;
-    display: none;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-#errormessage {
-    color: red;
-    display: none;
-    border: 1px solid red;
-    text-align: center;
-    padding: 15px;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-#sendmessage.show,
-#errormessage.show,
 .show {
     display: block;
 }
-
-img.col-md-4,
-img.col-sm-4,
-img.col-xs-4 {
-    padding-left: 5px;
-    padding-right: 5px;
-}
-
 
 /***************************************
 map
@@ -368,19 +290,9 @@ footer
     color: #fff;
 }
 
-.site-link,
-.site-link:hover,
-.site-link:focus {
-    color: #0cb8b6;
-    text-transform: none;
-}
-
 @media (min-width: 551px) and (max-width: 980px) {}
 
 @media (min-width: 220px) and (max-width: 551px) {
-    .testi-info {
-        margin-bottom: 20px;
-    }
     .marb20 {
         margin-top: 30px;
     }
@@ -391,24 +303,7 @@ footer
     .section-title {
         margin-bottom: 30px;
     }
-    .medi-info {
-        border: 0px;
-        border-bottom: 1px solid #fff;
-    }
-    .service-info {
-        margin-top: 20px;
-        margin-bottom: 0px;
-    }
-    .caption h3 {
-        font-size: 14px;
-    }
-    .caption p {
-        font-size: 12px;
-        padding-bottom: 5px;
-    }
-    .caption ul li a i {
-        font-size: 14px;
-    }
+
     .banner-text h1 {
         font-size: 24px;
     }
@@ -418,7 +313,6 @@ footer
 /***************************************
 Carousel
 ***************************************/
-
 
 .carouselnav {
     top:50%;
@@ -439,10 +333,4 @@ Preventing middle wheel scroll - hack
     /* iframe height */
     margin-top: -450px;
     /*  iframe height */
-}
-
-#salle1 .modal-dialog,
-#salle2 .modal-dialog,
-#salle3 .modal-dialog {
-    /*    width: 60%;*/
 }
