@@ -1,7 +1,7 @@
 Simple website for a physiotherapy practice.
 
 Used as a playground for:
-* build a one page layout using [bootstrap](http://getbootstrap.com/getting-started/#examples)
+* building a one page layout using [bootstrap](http://getbootstrap.com/getting-started/#examples)
 * scripted [Amazon S3](https://aws.amazon.com/fr/s3/) deployment
 * using Jekyll to:
     * reduce maintenance on multilingual aspects (see also [here](https://www.sylvaindurand.org/making-jekyll-multilingual/))
