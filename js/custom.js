@@ -22,3 +22,11 @@
     });
 
 })(jQuery);
+
+
+var trackInnerLink = function(url) {
+   ga('send', 'event', 'navigation', 'clicked', 'appointment', {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+}

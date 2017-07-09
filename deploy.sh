@@ -34,7 +34,7 @@ do
     gzip_and_upload $img "image/png" "img"
 done
 
-jpgList=( bg-banner.jpg salle1.jpg salle2.jpg salle3.jpg )
+jpgList=( bg-banner.jpg waitingroom.jpg salle1.jpg salle2.jpg salle3.jpg )
 for img in "${jpgList[@]}"
 do
     gzip_and_upload $img "image/jpg" "img"

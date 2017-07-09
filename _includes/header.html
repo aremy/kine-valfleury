@@ -32,7 +32,7 @@
                         <h1 class="white">{{ site.physiotherapy_practice[page.lang] }}</h1>
                         <p>{{ site.physiotherapy_title[page.lang] }}</p>
                         <p>{{ site.physiotherapy_address[page.lang] }}</p>
-                        <a href="#contact" class="btn btn-appoint">{{ site.make_appointment[page.lang] }}</a>
+                        <a href="#contact" onclick="trackInnerLink('#contact'); return false;" class="btn btn-appoint">{{ site.make_appointment[page.lang] }}</a>
                     </div>
                     <div class="overlay-detail text-center">
                         <a href="#thepractice"><i class="fa fa-angle-down"></i></a>
