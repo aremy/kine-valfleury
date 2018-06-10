@@ -16,14 +16,27 @@ Used as a playground for:
 * Clone the repository
 * [for the S3 deployment] install [Aws cli](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [configure it](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) with your AWS key
 
+* Install bootsrap4
+** install [Yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable)
+** `yarn add bootstrap@4.0.0`
+** `yarn add jquery`
+** `yarn add popper.js`
+For the generic approach, see ([how to use bootstrap4 with jekyll from scratch](https://simpleit.rocks/how-to-add-bootstrap-4-to-jekyll-the-right-way/))
+
+
 ## Generate
 From the repository:
-* Run `jekyll build` to generate `_site` folder containing the files to deploy (the website itself)
+* Run `bundle exec jekyll build` to generate `_site` folder containing the files to deploy (the website itself)
 
 ## Deploy
 * Run deploy.sh to:
     * gzip the resources (js, css)
     * upload to target Amazon S3 bucket with appropriate http headers with which they will be served (cache-control, content-enconding, content-type)
 
+
+## Misc
+* `bundle exec jekyll clean` to clean the site
+* `bundle exec jekyll serve --incremental` to test locally (http://localshot:4000)
+* `bundle update` to update all dependencies
 
 
