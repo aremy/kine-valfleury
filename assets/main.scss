@@ -1,0 +1,157 @@
+---
+---
+@import "bootstrap/scss/functions";
+@import "variables";
+@import "bootstrap/scss/bootstrap";
+ol,
+ul {
+    list-style: none;
+}
+
+h1,
+h2, h3 {
+
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+}
+
+h1, h2 {
+    text-transform: uppercase;
+}
+
+hr.botm-line {
+    height: 3px;
+    width: 60px;
+    background: #ffb737;
+    position: relative;
+    border: 0;
+    margin: 0 0 20px 0;
+}
+
+section {
+    padding: 60px 0;
+}
+
+#banner {
+    background: url('../img/bg-banner.jpg') no-repeat fixed;
+    background-size: cover;
+    position: relative;
+    &>div {
+        background-color: RGBA(13, 70, 83, 0.78);
+    }
+}
+
+.jumbotron {
+    background: none;
+    color: #fff;
+    text-align: center;
+    padding-top: 190px;
+    h1 {
+        font-family: 'Roboto', sans-serif;
+        font-weight: bold;
+        padding: 15px 0;
+    }
+    .btn-appoint,
+    .btn-appoint:hover,
+    .btn-appoint:focus {
+        padding: 10px 20px;
+        font-size: 12px;
+        background-color: rgba(12, 184, 182, 0.91);
+        border-radius: 3px;
+        color: #fff;
+    }
+}
+
+a.overlaybutton {
+    display: block;
+    text-align: center;
+    padding-bottom: 25px;
+    font-size: 38px;
+    color: #fff;
+}
+
+#contact p {
+    color: #999;
+}
+
+#map {
+    background-color: rgb(41, 48, 46);
+    .embeddedmap {
+        border: 0px;
+        width: 80%;
+    }
+}
+
+// Footer
+footer {
+    padding: 40px 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    background-color: #325C6A;
+    .quick-info li {
+        a {
+            @extend .text-white;
+        }
+        i {
+            font-size: 8px;
+            width: 15px;
+            height: 15px;
+            line-height: 15px;
+            text-align: left;
+        }
+    }
+}
+
+
+// Nav bar
+nav {
+    &.navbar {
+        margin-bottom: 0px;
+        border: 0px;
+        border-radius: 0px;
+    }
+    &.navbar-dark {
+        background-color: #fff;
+        padding: 20px 0;
+        transition: all 0.3s;
+        background-color: transparent;
+        border: 0px;
+    }
+    &.top-nav-collapse {
+        padding: 0;
+        background: rgba(28, 74, 90, 0.9);
+    }
+    .nav-item {
+        position: relative;
+        display: block;
+        text-transform: uppercase;
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9em;
+            font-weight: 300;
+            display: inline-block;
+            padding: 15px;
+        }
+        &.active,
+        &:hover {
+            color: #fff;
+            background-color: rgba(12, 184, 182, 0.21);
+        }
+    }
+}
+
+/******************************************
+Map - Preventing middle wheel scroll - hack
+*******************************************/
+
+.overlay {
+    background: transparent;
+    position: relative;
+    width: 100%;
+    height: 450px;
+    /* iframe height */
+    top: 450px;
+    /* iframe height */
+    margin-top: -450px;
+    /*  iframe height */
+}

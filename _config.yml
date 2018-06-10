@@ -25,6 +25,9 @@ url: "http://kine-valfleury.fr" # the base hostname & protocol for your site, e.
 markdown: kramdown
 #theme: minima
 sass:
+    load_paths:
+        - _sass
+        - node_modules
     style: compressed
 
 gems:
