@@ -40,12 +40,12 @@ exclude:
 
 
 description:
-  fr: "Andreea Almajan Masseur-Kinésithérapeute Meudon Issy-les-Moulineaux"
-  en: "Andreea Almajan Physiotherapist Meudon Issy-les-Moulineaux"
+  fr: "Andreea Almajan Kinésithérapeute Ostéopathe Meudon Issy-les-Moulineaux"
+  en: "Andreea Almajan Physiotherapist Osteopath Meudon Issy-les-Moulineaux"
 
 keywords:
-    fr: "masseur-kinésithérapeute meudon val-fleury issy-les-moulineaux rendez-vous"
-    en: "Physiotherapy Practice meudon val-fleury issy-les-moulineaux rendez-vous"
+    fr: "kinésithérapeute ostéopathe meudon val-fleury issy-les-moulineaux rendez-vous"
+    en: "physiotherapy osteopath meudon val-fleury issy-les-moulineaux rendez-vous"
 
 index:
     fr: "en/"
@@ -64,12 +64,12 @@ blogposts:
   en: "News"
 
 physiotherapy_practice:
-  fr: "Cabinet de Kinésithérapie"
-  en: "Physiotherapy Practice"
+  fr: "Cabinet de Kinésithérapie & Ostéopathie"
+  en: "Physiotherapy & Osteopathy Practice"
 
 physiotherapy_title:
-  fr: "Andreea Almajan - Masseur-Kinésithérapeute D.E."
-  en: "Andreea Almajan - Physical Therapist S.D."
+  fr: "Andreea Almajan - Kinésithérapeute D.E., Ostéopathe D.O."
+  en: "Andreea Almajan - Physical Therapist S.D., Osteopath O.D."
 
 physiotherapy_address:
   fr: "Meudon 92190 - RER C Val Fleury"
@@ -112,6 +112,7 @@ contact:
 
 getting_there:
   fr: "S'y rendre"
+  en: "Getting there"
 
 quick_links:
   fr: "Liens Rapides"
