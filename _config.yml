@@ -14,8 +14,8 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title:
-  fr: "Masseur-Kinésithérapeute Meudon Issy-les-Moulineaux"
-  en: "Physiotherapist Meudon/Issy-les-Moulineaux"
+  fr: "Kinésithérapeute Ostéopathe Meudon Issy-les-Moulineaux"
+  en: "Physiotherapist Osteopath Meudon Issy-les-Moulineaux"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://kine-valfleury.fr" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
