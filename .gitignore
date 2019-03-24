@@ -4,5 +4,6 @@ _site
 .asset-cache
 Gemfile.lock
  .vscode/
+node_modules
 
 
