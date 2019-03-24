@@ -39,16 +39,16 @@ layout: default
                             <li data-target="#carouselIndicators" data-slide-to="3"></li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
+                            <div role="option" class="carousel-item active">
                                 <img class="d-block img-fluid" src="/img/waitingroom.jpg" alt="{{ site.room1[page.lang] }}">
                             </div>
-                            <div class="carousel-item">
+                            <div role="option" class="carousel-item">
                                 <img class="d-block img-fluid" src="/img/salle1.jpg" alt="{{ site.room1[page.lang] }}">
                             </div>
-                            <div class="carousel-item">
+                            <div role="option" class="carousel-item">
                                 <img class="d-block img-fluid" src="/img/salle2.jpg" alt="{{ site.room1[page.lang] }}">
                             </div>
-                            <div class="carousel-item">
+                            <div role="option" class="carousel-item">
                                 <img class="d-block img-fluid" src="/img/salle3.jpg" alt="{{ site.room1[page.lang] }}">
                             </div>
                         </div>
@@ -78,7 +78,7 @@ layout: default
                     <div class="space"></div>
                     <p>
                         <i class="fa fa-phone fa-fw pull-left fa-2x"></i>
-                        <a itemprop="telephone" href="tel:{{ site.phone_nb_link[page.lang] }}">{{ site.phone_nb[page.lang] }}</a>
+                        <a href="tel:{{ site.phone_nb_link[page.lang] }}">{{ site.phone_nb[page.lang] }}</a>
                     </p>
                 </div>
                 <div class="col-md-6 col-sm-6">
@@ -102,7 +102,7 @@ layout: default
             <div class="row">
                 <div class="text-center w-100">
                     <div class="overlay" onClick="style.pointerEvents='none'"></div>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5255.305580153494!2d2.23989!3d48.80760500000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a4556adade9%3A0x8712b2d8ada01ba1!2sAndreea+Almajan!5e0!3m2!1sfr!2sus!4v1496518933935"
+                    <iframe title="{{ site.getting_there_map[page.lang] }}" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5255.305580153494!2d2.23989!3d48.80760500000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a4556adade9%3A0x8712b2d8ada01ba1!2sAndreea+Almajan!5e0!3m2!1sfr!2sus!4v1496518933935"
                         height="450" class="embeddedmap" allowfullscreen></iframe>
                 </div>
             </div>

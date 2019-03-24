@@ -5,6 +5,7 @@ bundle exec jekyll clean
 bundle exec jekyll build
 
 aws s3 cp _site/index.html s3://kine-valfleury.fr --region eu-west-2
+aws s3 cp _site/manifest.json s3://kine-valfleury.fr --region eu-west-2
 aws s3 cp _site/en/index.html s3://kine-valfleury.fr/en/ --region eu-west-2
 aws s3 cp _site/fonts s3://kine-valfleury.fr/fonts --region eu-west-2 --recursive
 aws s3 cp _site/node_modules s3://kine-valfleury.fr/node_modules --region eu-west-2 --recursive

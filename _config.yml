@@ -114,6 +114,10 @@ getting_there:
   fr: "S'y rendre"
   en: "Getting there"
 
+getting_there_map:
+  fr: "Carte"
+  en: "Map"
+
 quick_links:
   fr: "Liens Rapides"
   en: "Quick Links"
