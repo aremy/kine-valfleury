@@ -16,7 +16,7 @@ aws s3 cp _site/sitemaps.xml s3://kine-valfleury.fr --region eu-west-2
 
 function gzip_and_upload {
     gzip -c --force -k --best  _site/$3/$1 > tmp/$1
-    aws s3 cp tmp/$1 s3://kine-valfleury.fr/$3/ --region eu-west-2 --content-type=$2 --cache-control="max-age=604800" --content-encoding="gzip"
+    aws s3 cp tmp/$1 s3://kine-valfleury.fr/$3/ --region eu-west-2 --content-type=$2 --cache-control="max-age=1296000" --content-encoding="gzip"
 }
 
 jsList=( custom.js )
