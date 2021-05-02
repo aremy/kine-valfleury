@@ -5,5 +5,5 @@ _site
 Gemfile.lock
  .vscode/
 node_modules
-
+.jekyll-cache/
 

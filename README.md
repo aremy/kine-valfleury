@@ -18,9 +18,7 @@ Used as a playground for:
 
 * Install bootsrap4
 ** install [Yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable)
-** `yarn add bootstrap@4.0.0`
-** `yarn add jquery`
-** `yarn add popper.js`
+** `yarn add bootstrap@next`
 For the generic approach, see ([how to use bootstrap4 with jekyll from scratch](https://simpleit.rocks/how-to-add-bootstrap-4-to-jekyll-the-right-way/))
 
 

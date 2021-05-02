@@ -131,12 +131,13 @@ nav {
             font-weight: 300;
             display: inline-block;
             padding: 15px;
+            &.active,
+            &:hover {
+                color: #fff;
+                background-color: rgba(12, 184, 182, 0.21);
+            }
         }
-        &.active,
-        &:hover {
-            color: #fff;
-            background-color: rgba(12, 184, 182, 0.21);
-        }
+
     }
 }
 

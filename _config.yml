@@ -38,6 +38,8 @@ exclude:
   - Gemfile.lock
   - deploy.sh
 
+include:
+  - node_modules
 
 description:
   fr: "Andreea Almajan Kinésithérapeute Ostéopathe Meudon Issy-les-Moulineaux"
@@ -86,6 +88,10 @@ home:
 the_practice:
   fr: "Le Cabinet"
   en: "The Practice"
+
+waitingroom:
+  fr: "Salle d'attente"
+  en: "Waiting room"
 
 room1:
   fr: "Salle 1"

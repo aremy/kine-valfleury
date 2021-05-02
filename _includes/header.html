@@ -6,20 +6,20 @@
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a href="{{ site.baseurl }}/{{ site.index[page.lang] }}">
+                <a class="me-2" href="{{ site.baseurl }}/{{ site.index[page.lang] }}">
                     <img width="19px" height="15px" src="/img/{{ site.altlang[page.lang] }}.png" alt="{{ site.altlang[page.lang] }}" />
                 </a>
                 <div class="collapse navbar-collapse" id="myNavbar">
 
-                    <ul class="navbar-nav ml-auto">
-                        <li class="nav-item active">
-                            <a href="#banner">{{ site.home[page.lang] }}</a>
+                    <ul id="navbar" class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#banner">{{ site.home[page.lang] }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#thepractice">{{ site.the_practice[page.lang] }}</a>
+                            <a class="nav-link" href="#thepractice">{{ site.the_practice[page.lang] }}</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#contact">{{ site.contact[page.lang] }}</a>
+                            <a class="nav-link" href="#contact">{{ site.contact[page.lang] }}</a>
                         </li>
                     </ul>
                 </div>
