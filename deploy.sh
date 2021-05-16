@@ -12,6 +12,8 @@ aws s3 cp _site/node_modules s3://kine-valfleury.fr/node_modules --region eu-wes
 
 aws s3 cp _site/feed.xml s3://kine-valfleury.fr --region eu-west-2
 aws s3 cp _site/sitemaps.xml s3://kine-valfleury.fr --region eu-west-2
+aws s3 cp _site/manifest-en.json s3://kine-valfleury.fr --region eu-west-2
+aws s3 cp _site/manifest-fr.json s3://kine-valfleury.fr --region eu-west-2
 
 
 function gzip_and_upload {
@@ -33,7 +35,7 @@ do
     gzip_and_upload $css "text/css" "assets"
 done
 
-pngList=( caducee-transparent.png en.png fr.png favicon.png caducee-transparent-profile.png)
+pngList=( caducee-transparent.png en.png fr.png favicon.png caducee-transparent-profile.png caducee-48.png caducee-72.png caducee-96.png caducee-144.png caducee-168.png caducee-192.png)
 for img in "${pngList[@]}"
 do
     gzip_and_upload $img "image/png" "img"

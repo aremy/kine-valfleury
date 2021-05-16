@@ -101,7 +101,9 @@ footer {
     }
 }
 
-
+img {
+    object-fit: contain;
+}
 // Nav bar
 nav {
     &.navbar {
@@ -126,6 +128,7 @@ nav {
         text-transform: uppercase;
         a {
             color: #fff;
+            width: 100%;
             text-decoration: none;
             font-size: 0.9em;
             font-weight: 300;
