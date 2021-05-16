@@ -17,7 +17,7 @@ title:
   fr: "Andreea Almajan Kinésithérapeute Ostéopathe Meudon Issy-les-Moulineaux"
   en: "Andreea Almajan Physiotherapist Osteopath Meudon Issy-les-Moulineaux"
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "http://kine-valfleury.fr" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.kine-valfleury.fr" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
 #github_username:  jekyll
 
