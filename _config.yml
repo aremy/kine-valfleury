@@ -104,14 +104,6 @@ room3:
   fr: "Salle 3"
   en: "Room 3"
 
-previous:
-  fr: "Précédent"
-  en: "Previous"
-
-next:
-  fr: "Suivant"
-  en: "Next"
-
 contact:
   fr: "Contact"
   en: "Contact"
@@ -138,3 +130,20 @@ phone_nb:
 phone_nb_link:
   fr: 0145342973
   en: +33145342973
+
+# Accessibility
+language_selection:
+    fr: "Selection de Langue"
+    en: "Language Selection"
+
+google_maps_location:
+    fr: "Emplacement sur Google Maps"
+    en: "Location on Google Maps"
+
+previous:
+    fr: "Précédent"
+    en: "Previous"
+
+next:
+    fr: "Suivant"
+    en: "Next"

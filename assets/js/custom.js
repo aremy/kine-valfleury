@@ -1,6 +1,6 @@
 (function($) {
     // Add smooth scrolling to all links in navbar
-    $(".navbar a, .quick-info li a, .banner a, #contact").on('click', function(event) {
+    $(".navbar a, .quick-info li a, .banner a").on('click', function(event) {
         var hash = this.hash;
         if (hash) {
             event.preventDefault();
@@ -13,7 +13,7 @@
     });
 
     //jQuery to collapse the navbar on scroll
-    $(window).scroll(function() {
+    $(window).on( "scroll", function() {
         if ($(".navbar").offset().top > 50) {
             $(".fixed-top").addClass("top-nav-collapse");
         } else {

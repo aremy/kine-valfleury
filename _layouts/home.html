@@ -1,14 +1,14 @@
 ---
 layout: default
 ---
-<main>
+<main role="main">
     {% if site.posts[0] %}
     <section id="posts">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <h2>{{ site.blogposts[page.lang] }}</h2>
-                    <hr class="botm-line">
+                    <hr class="botm-line" aria-hidden="true">
                 </div>
 
                 <div class="col-md-12 col-sm-12">
@@ -20,12 +20,12 @@ layout: default
     </section>
     {% endif %}
     <!-- The practice-->
-    <section id="thepractice">
+    <section id="thepractice" aria-label="{{ site.the_practice[page.lang] }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <h2>{{ site.the_practice[page.lang] }}</h2>
-                    <hr class="botm-line">
+                    <hr class="botm-line" aria-hidden="true">
                 </div>
                 <div class="col-md-2 col-sm-2">
                 </div>
@@ -39,73 +39,76 @@ layout: default
                             <button type="button" data-bs-target="#carouselIndicators" data-bs-slide-to="3" aria-label="{{ site.room3[page.lang] }}"></button>
                         </div>
 
-                        <div class="carousel-inner">
+                            <div class="carousel-inner">
                             <div class="carousel-item active">
-                                <img class="d-block w-100" src="/img/waitingroom.jpg" alt="{{ site.room1[page.lang] }}">
+                                <img class="d-block w-100" height="653" width="870" src="/img/waitingroom.jpg" alt="{{ site.room1[page.lang] }}">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/salle1.jpg" alt="{{ site.room1[page.lang] }}" loading="lazy">
+                                <img class="d-block w-100" height="653" width="870" src="/img/salle1.jpg" alt="{{ site.room1[page.lang] }}" loading="lazy">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/salle2.jpg" alt="{{ site.room1[page.lang] }}" loading="lazy">
+                                <img class="d-block w-100" height="653" width="870" src="/img/salle2.jpg" alt="{{ site.room1[page.lang] }}" loading="lazy">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block w-100" src="/img/salle3.jpg" alt="{{ site.room1[page.lang] }}" loading="lazy">
+                                <img class="d-block w-100" height="653" width="870" src="/img/salle3.jpg" alt="{{ site.room1[page.lang] }}" loading="lazy">
                             </div>
                         </div>
 
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselIndicators" data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
+                            <span class="visually-hidden contrasted">{{ site.previous[page.lang] }}</span>
                         </button>
                         <button class="carousel-control-next" type="button" data-bs-target="#carouselIndicators" data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
+                            <span class="visually-hidden contrasted">{{ site.next[page.lang] }}</span>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="contact">
+    <section id="contact" aria-label="{{ site.contact[page.lang] }}">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 col-sm-12">
                     <h2>{{ site.contact[page.lang] }}</h2>
-                    <hr class="botm-line">
+                    <hr class="botm-line" aria-hidden="true">
                 </div>
 
                 <div class="col-md-6 col-sm-6">
                     <h3>{{ site.make_appointment[page.lang] }}</h3>
-                    <div class="space"></div>
+                    <div class="space" aria-hidden="true"></div>
                     <p>
-                        <i class="fa fa-phone fa-fw pull-left fa-2x"></i>
+                        <i class="fa fa-phone fa-fw pull-left fa-2x" aria-hidden="true"></i>
                         <a href="tel:{{ site.phone_nb_link[page.lang] }}">{{ site.phone_nb[page.lang] }}</a>
                     </p>
                 </div>
                 <div class="col-md-6 col-sm-6">
                     <h3>{{ site.getting_there[page.lang] }}</h3>
-                    <div class="space"></div>
+                    <div class="space" aria-hidden="true"></div>
                     <p>
-                        <i class="fa fa-map-marker fa-fw pull-left fa-2x"></i>
+                        <i class="fa fa-map-marker fa-fw pull-left fa-2x" aria-hidden="true"></i>
                         <a href="https://www.google.com/maps/place/Andreea+Almajan/@48.807605,2.23989,16z/data=!4m13!1m7!3m6!1s0x47e67a45567b0ced:0x80058fc20404eb34!2s10+Avenue+Louvois,+92190+Meudon,+France!3b1!8m2!3d48.8076047!4d2.23989!3m4!1s0x47e67a4556adade9:0x8712b2d8ada01ba1!8m2!3d48.8076329!4d2.2399007?hl=fr-FR"><span>10 Avenue Louvois</span>
                             <br/>92190 Meudon</a>
                     </p>
-                    <div class="space"></div>
-                    <p>
-                        <i class="fa fa-bus fa-fw pull-left fa-2x"></i>RER C Val Fleury</p>
+                    <div class="space" aria-hidden="true"></div>
+                    <p><i class="fa fa-bus fa-fw pull-left fa-2x" aria-hidden="true"></i>RER C Val Fleury</p>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="map">
+    <section id="map" aria-label="{{ site.getting_there_map[page.lang] }}">
         <div class="container">
             <div class="row">
-                <div class="text-center w-100">
+                <a href="https://www.google.com/maps/place/Andreea+Almajan/@48.807633,2.239901,15z/data=!4m5!3m4!1s0x0:0x8712b2d8ada01ba1!8m2!3d48.8076329!4d2.2399007?hl=en-US"
+                   class="visually-hidden contrasted">{{ site.google_maps_location[page.lang] }}</a>
+                <div class="text-center w-100" aria-hidden="true">
                     <div class="overlay" onClick="style.pointerEvents='none'"></div>
-                    <iframe title="{{ site.getting_there_map[page.lang] }}" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5255.305580153494!2d2.23989!3d48.80760500000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a4556adade9%3A0x8712b2d8ada01ba1!2sAndreea+Almajan!5e0!3m2!1sfr!2sus!4v1496518933935"
-                        height="450" class="embeddedmap" allowfullscreen></iframe>
+                    <iframe loading="lazy"
+                            title="{{ site.getting_there_map[page.lang] }}" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5255.305580153494!2d2.23989!3d48.80760500000001!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e67a4556adade9%3A0x8712b2d8ada01ba1!2sAndreea+Almajan!5e0!3m2!1sfr!2sus!4v1496518933935"
+                            height="450"
+                            class="embeddedmap"
+                            allowfullscreen></iframe>
                 </div>
             </div>
         </div>

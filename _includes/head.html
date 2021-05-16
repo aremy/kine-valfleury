@@ -24,18 +24,21 @@
     <!-- Twitter specific -->
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="{% if page.title %}{{ page.title[page.lang] | escape }}{% else %}{{ site.title[page.lang] | escape }}{% endif %}">
+    <meta property="twitter:description" content="{{ page.excerpt | default: site.description[page.lang] | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <meta name="twitter:site" content="{{ page.url | replace:'index.html','' | absolute_url }}">
     <meta property="twitter:image" content="/img/caducee-transparent-profile.png" />
 
+    <link rel="stylesheet" type="text/css" rel=preload href="/assets/main.css">
+    <link rel="stylesheet" type="text/css" rel=preload href="/assets/font-awesome.min.css">
 
     <!-- third-generation iPad with high-resolution Retina display: -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon.png">
     <!-- iPhone with high-resolution Retina display: -->
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/img/favicon.png">
     <!-- first- and second-generation iPad: -->
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/img/favicon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/img/favicon.png">
     <!-- non-Retina iPhone, iPod Touch, and Android 2.1+ devices: -->
-    <link rel="apple-touch-icon-precomposed" href="/img/favicon.png">
+    <link rel="apple-touch-icon" href="/img/favicon.png">
 
 
 
