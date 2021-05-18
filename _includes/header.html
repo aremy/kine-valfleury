@@ -2,12 +2,12 @@
     <div class="bg-color">
         <nav class="navbar navbar-dark bg-inverse navbar-expand-md fixed-top">
             <div class="container">
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="#myNavbar" aria-expanded="false"
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#myNavbar" aria-controls="myNavbar" aria-expanded="false"
                     aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <a class="me-2" href="{{ site.baseurl }}/{{ site.index[page.lang] }}">
-                    <img width="19px" height="15px" src="/img/{{ site.altlang[page.lang] }}.png" alt="{{ site.language_selection[page.lang] }} - {{ site.altlang[page.lang] }}" />
+                    <img width="19" height="15" src="/img/{{ site.altlang[page.lang] }}.png" alt="{{ site.language_selection[page.lang] }} - {{ site.altlang[page.lang] }}" />
                 </a>
                 <div class="collapse navbar-collapse" id="myNavbar">
 
@@ -26,14 +26,14 @@
             </div>
         </nav>
         <div class="jumbotron jumbotron-fluid">
-            <img src="/img/caducee-transparent.png" width="69px" height="96px" alt="{{ site.physiotherapy[page.lang] }}" class="img-responsive">
-            <h1 class="white" itemprop="name">{{ site.physiotherapy_practice[page.lang] }}</h1>
+            <img src="/img/caducee-transparent.png" width="69" height="96" alt="{{ site.physiotherapy[page.lang] }}" class="img-responsive">
+            <h1 class="white">{{ site.physiotherapy_practice[page.lang] }}</h1>
             <p>{{ site.physiotherapy_title[page.lang] }}</p>
             <p>{{ site.physiotherapy_address[page.lang] }}</p>
             <a href="#contact" onclick="trackInnerLink('#contact'); return false;" class="btn btn-appoint">{{ site.make_appointment[page.lang] }}</a>
         </div>
         <a href="#thepractice" class="overlaybutton" title="{{ site.the_practice[page.lang] }}">
-            <i class="fa fa-angle-down" aria-hidden="true"></i><span class="visually-hidden">{{ site.the_practice[page.lang] }}</span>
+            <i class="fas fa-angle-down" aria-hidden="true"></i><span class="visually-hidden">{{ site.the_practice[page.lang] }}</span>
         </a>
     </div>
 

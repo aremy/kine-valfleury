@@ -12,7 +12,7 @@ aws s3 cp _site/node_modules s3://kine-valfleury.fr/node_modules --region eu-wes
 
 aws s3 cp _site/feed.xml s3://kine-valfleury.fr --region eu-west-2
 aws s3 cp _site/sitemaps.xml s3://kine-valfleury.fr --region eu-west-2
-aws s3 cp _site/manifest-en.json s3://kine-valfleury.fr --region eu-west-2
+aws s3 cp _site/en/manifest-en.json s3://kine-valfleury.fr/en/ --region eu-west-2
 aws s3 cp _site/manifest-fr.json s3://kine-valfleury.fr --region eu-west-2
 
 

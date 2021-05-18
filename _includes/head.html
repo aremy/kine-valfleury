@@ -6,7 +6,7 @@
     <title>{% if page.title %}{{ page.title[page.lang] | escape }}{% else %}{{ site.title[page.lang] | escape }}{% endif %}</title>
     <meta name="description" content="{{ page.excerpt | default: site.description[page.lang] | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <meta name="keywords" content="{{ site.keywords[page.lang] }}">
-    <meta name="theme-color" content="#&">
+    <meta name="theme-color" content="#0d4653">
 
     <meta name="Content-Type-Script" content="text/javascript" />
     <meta name="Content-Type-Style" content="text/css" />
@@ -28,8 +28,15 @@
     <meta name="twitter:site" content="{{ page.url | replace:'index.html','' | absolute_url }}">
     <meta property="twitter:image" content="/img/caducee-transparent-profile.png" />
 
-    <link rel="stylesheet" type="text/css" rel="preload" href="/assets/main.css">
-    <link rel="stylesheet" type="text/css" rel="preload" href="/assets/font-awesome.min.css">
+    <link type="text/css" rel="preload" href="/assets/main.css" as="style">
+    <link type="text/css" rel="preload" href="/assets/fontawesome.min.css" as="style">
+
+    <link rel="stylesheet" type="text/css" href="/assets/main.css">
+    <link rel="stylesheet" type="text/css" href="/assets/fontawesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/assets/solid.css">
+
+    <link rel="preload" href="{{'/node_modules/bootstrap/dist/js/bootstrap.min.js' | prepend: site.baseurl}}" as="script">
+    <link rel="preload" href="{{'/assets/js/custom.js' | prepend: site.baseurl}}"  as="script">
 
     <!-- third-generation iPad with high-resolution Retina display: -->
     <link rel="apple-touch-icon" sizes="144x144" href="/img/favicon.png">
