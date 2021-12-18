@@ -13,6 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Build prerequisites
+      run: |
+        docker run \
+        -v ${{ github.workspace }}:/app \
+        node:latest /bin/bash -c "chmod -R 777 /app && npm install"
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
