@@ -17,7 +17,7 @@ jobs:
       run: |
         docker run \
         -v ${{ github.workspace }}:/app \
-        node:latest /bin/bash -c "chmod -R 777 /app && npm install"
+        node:latest /bin/bash -c "chmod -R 777 /app && cd /app && npm install"
     - name: Build the site in the jekyll/builder container
       run: |
         docker run \
