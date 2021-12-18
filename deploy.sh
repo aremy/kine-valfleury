@@ -35,14 +35,14 @@ do
     gzip_and_upload $css "text/css" "assets"
 done
 
-pngList=( caducee-transparent.png en.png fr.png favicon.png caducee-transparent-profile.png caducee-48.png caducee-72.png caducee-96.png caducee-144.png caducee-168.png caducee-192.png)
+pngList=( en.png fr.png favicon.png caducee-48.png caducee-72.png caducee-96.png caducee-144.png caducee-168.png caducee-192.png)
 for img in "${pngList[@]}"
 do
     gzip_and_upload $img "image/png" "img"
 done
 
-jpgList=( bg-banner.webp waitingroom.webp salle1.webp salle2.webp salle3.webp )
-for img in "${jpgList[@]}"
+webpList=( bg-banner.webp waitingroom.webp salle1.webp salle2.webp salle3.webp caducee-masseurkine.webp caducee-masseurkine-profile.webp )
+for img in "${webpList[@]}"
 do
     gzip_and_upload $img "image/webp" "img"
 done
