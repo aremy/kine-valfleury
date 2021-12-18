@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 mkdir -p tmp
 
 #bundle exec jekyll clean
