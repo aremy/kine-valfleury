@@ -41,10 +41,10 @@ do
     gzip_and_upload $img "image/png" "img"
 done
 
-jpgList=( bg-banner.jpg waitingroom.jpg salle1.jpg salle2.jpg salle3.jpg )
+jpgList=( bg-banner.webp waitingroom.webp salle1.webp salle2.webp salle3.webp )
 for img in "${jpgList[@]}"
 do
-    gzip_and_upload $img "image/jpg" "img"
+    gzip_and_upload $img "image/webp" "img"
 done
 
 rm -rf tmp
