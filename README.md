@@ -17,8 +17,10 @@ Used as a playground for:
 * [for the S3 deployment] install [Aws cli](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [configure it](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) with your AWS key
 
 * Install bootsrap4
+
 ** install [Yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable)
 ** `yarn add bootstrap@next`
+
 For the generic approach, see ([how to use bootstrap4 with jekyll from scratch](https://simpleit.rocks/how-to-add-bootstrap-4-to-jekyll-the-right-way/))
 
 

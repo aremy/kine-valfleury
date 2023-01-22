@@ -18,7 +18,7 @@
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
     <link rel="alternate" type="application/rss+xml" title="{{ site.title[page.lang] | escape }}" href="{{ '/feed.xml ' | relative_url }}">
 
-    <!-- Facebook Specific -->
+    <!-- OpenGraph/Facebook Specific -->
     <meta property="og:image" content="/img/caducee-masseurkine-profile.webp" />
     <meta property="og:description" content="{{ page.excerpt | default: site.description[page.lang] | strip_html | normalize_whitespace | truncate: 160 | escape }}">
     <meta property="og:title" content="{% if page.title %}{{ page.title[page.lang] | escape }}{% else %}{{ site.title[page.lang] | escape }}{% endif %}">
@@ -31,14 +31,13 @@
     <meta name="twitter:site" content="{{ page.url | replace:'index.html','' | absolute_url }}">
     <meta property="twitter:image" content="/img/caducee-masseurkine-profile.webp" />
 
-    <link type="text/css" rel="preload" href="/assets/main.css" as="style">
-    <link type="text/css" rel="preload" href="/assets/fontawesome.min.css" as="style">
-
     <link rel="stylesheet" type="text/css" href="/assets/main.css">
-    <link rel="stylesheet" type="text/css" href="/assets/fontawesome.min.css">
-    <link rel="stylesheet" type="text/css" href="/assets/solid.css">
+    
+    <link rel="preload" href="{{'/node_modules/bootstrap-icons/font/bootstrap-icons.css' | prepend: site.baseurl}}" as="style">
+    <link rel="stylesheet" type="text/css" href="{{'/node_modules/bootstrap-icons/font/bootstrap-icons.css' | prepend: site.baseurl}}">
 
     <link rel="preload" href="{{'/node_modules/bootstrap/dist/js/bootstrap.min.js' | prepend: site.baseurl}}" as="script">
+    
     <link rel="preload" href="{{'/assets/js/custom.js' | prepend: site.baseurl}}"  as="script">
 
     <!-- third-generation iPad with high-resolution Retina display: -->

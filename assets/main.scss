@@ -1,21 +1,27 @@
 ---
 ---
+
 @import "bootstrap/scss/functions";
 @import "variables";
 @import "bootstrap/scss/bootstrap";
+
+
 ol,
 ul {
     list-style: none;
 }
 
 h1,
-h2, h3 {
+h2,
+h3 {
 
-    font-family: 'Raleway', sans-serif;
+    //font-family: 'Raleway', sans-serif;
+    font-family: 'Segoe UI', sans-serif;
     font-weight: bold;
 }
 
-h1, h2 {
+h1,
+h2 {
     text-transform: uppercase;
 }
 
@@ -36,6 +42,7 @@ section {
     background: url('../img/bg-banner.webp') no-repeat fixed;
     background-size: cover;
     position: relative;
+
     &>div {
         background-color: RGBA(13, 70, 83, 0.78);
     }
@@ -46,11 +53,13 @@ section {
     color: #fff;
     text-align: center;
     padding-top: 190px;
+
     h1 {
         font-family: 'Roboto', sans-serif;
         font-weight: bold;
         padding: 15px 0;
     }
+
     .btn-appoint,
     .btn-appoint:hover,
     .btn-appoint:focus {
@@ -76,6 +85,7 @@ a.overlaybutton {
 
 #map {
     background-color: rgb(41, 48, 46);
+
     .embeddedmap {
         border: 0px;
         width: 80%;
@@ -87,10 +97,12 @@ footer {
     padding: 40px 0px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.12);
     background-color: #325C6A;
+
     .quick-info li {
         a {
             @extend .text-white;
         }
+
         i {
             font-size: 8px;
             width: 15px;
@@ -104,6 +116,7 @@ footer {
 img {
     object-fit: contain;
 }
+
 // Nav bar
 nav {
     &.navbar {
@@ -111,6 +124,7 @@ nav {
         border: 0px;
         border-radius: 0px;
     }
+
     &.navbar-dark {
         background-color: #fff;
         padding: 20px 0;
@@ -118,14 +132,17 @@ nav {
         background-color: transparent;
         border: 0px;
     }
+
     &.top-nav-collapse {
         padding: 0;
         background: rgba(28, 74, 90, 0.9);
     }
+
     .nav-item {
         position: relative;
         display: block;
         text-transform: uppercase;
+
         a {
             color: #fff;
             width: 100%;
@@ -134,6 +151,7 @@ nav {
             font-weight: 300;
             display: inline-block;
             padding: 15px;
+
             &.active,
             &:hover {
                 color: #fff;
