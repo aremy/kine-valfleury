@@ -1,3 +1,5 @@
+[![Jekyll Site CI](https://github.com/aremy/kine-valfleury/actions/workflows/jekyll.yml/badge.svg?branch=master)](https://github.com/aremy/kine-valfleury/actions/workflows/jekyll.yml)
+
 Simple website for a physiotherapy practice.
 
 Used as a playground for:
