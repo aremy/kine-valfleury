@@ -2,39 +2,68 @@ name: Jekyll Site CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-      id-token: write
-      
+      #id-token: write
+
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 20
-    - name: Build prerequisites
-      run: npm install
-    - name: Build the site in the jekyll/builder container
-      run: |
-        docker run \
-        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
-        jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && bundle install && bundle exec jekyll build --future"
-    - name: Set AWS credentials
-      uses: aws-actions/configure-aws-credentials@master
-      with:
-        role-to-assume: arn:aws:iam::545566896460:role/git-action-deployment-user
-        aws-region: eu-west-2
+      - uses: actions/checkout@v4
+      - uses: ruby/setup-ruby@8575951200e472d5f2d95c625da0c7bec8217c42 # v1.161.0
+        with:
+          ruby-version: "3.1" # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Build prerequisites
+        run: npm install
+      - name: Build with Jekyll
+        run: bundle exec jekyll build
+        #env:
+        #  JEKYLL_ENV: production
+      #- name: Build
+      #  uses: actions/jekyll-build-pages@v1
+      #- name: Build the site in the jekyll/builder container
+      #   run: |
+      #    docker run \
+      #    -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+      #    jekyll/builder:latest /bin/bash -c "chmod -R 777 /srv/jekyll && bundle install && bundle exec jekyll build --future"
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          name: custom_website
+
+      
   deploy:
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+      cancel-in-progress: true
     needs: build
     if: github.ref == 'refs/heads/master'
+    permissions:
+      #contents: read
+      id-token: write
     steps:
-    - name: Deploy
-      run: ./deploy.sh
-    
+      - uses: actions/checkout@v4
+      - name: Download Generated Pages
+        uses: actions/download-artifact@v4
+        with:
+          name: custom_website
+          path: _site
+      - run: tar -xvf _site/artifact.tar -C _site && rm -f _site/artifact.tar
+      - name: Set AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::545566896460:role/git-action-deployment-user
+          aws-region: eu-west-2
+      - name: Deploy
+        run: ./deploy.sh

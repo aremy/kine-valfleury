@@ -30,7 +30,7 @@ sass:
         - node_modules
     style: compressed
 
-gems:
+plugins:
   - jekyll-feed
 
 exclude:
