@@ -38,10 +38,10 @@
   <!-- Critical resource hints -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preload" as="image" href="/img/bg-banner.webp" fetchpriority="high">
 
-  <!-- Critical CSS (render-blocking intentionally — it IS the page styles) -->
-  <link rel="stylesheet" href="/assets/css/main.css">
+  <style>{% inlineCSS %}</style>
 
   <!-- Material Symbols — loaded async to avoid render blocking -->
   <link rel="preload"

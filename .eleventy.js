@@ -1,4 +1,11 @@
+const fs   = require("fs");
+const path = require("path");
+
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addShortcode("inlineCSS", function () {
+    return fs.readFileSync(path.join(__dirname, "assets/css/main.css"), "utf8");
+  });
+
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("assets/css");
   eleventyConfig.addPassthroughCopy("assets/js");

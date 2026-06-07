@@ -32,13 +32,17 @@ aws s3 cp _site/sw.js "$BUCKET/sw.js" \
   --content-type "application/javascript" \
   --cache-control "no-cache,no-store,must-revalidate"
 
-# HTML pages — always fresh, no cache
+# HTML pages — always fresh, no cache, gzip-compressed (CSS is inlined so pages would be large otherwise)
 find _site -name "*.html" | while read -r html; do
   key="${html#_site/}"
-  aws s3 cp "$html" "$BUCKET/$key" \
+  tmpfile=$(mktemp /tmp/kine-html-XXXXXX.gz)
+  gzip -c --best "$html" > "$tmpfile"
+  aws s3 cp "$tmpfile" "$BUCKET/$key" \
     --region "$REGION" \
     --content-type "text/html; charset=utf-8" \
+    --content-encoding "gzip" \
     --cache-control "no-cache,must-revalidate"
+  rm "$tmpfile"
 done
 
 # Re-upload CSS and JS gzip-compressed for better transfer performance
