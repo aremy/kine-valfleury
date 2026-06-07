@@ -17,6 +17,8 @@ module.exports = {
 
   altlang: { fr: "en", en: "fr" },
   altpath: { fr: "en/", en: "" },
+  altflag: { fr: "flag-en.svg", en: "flag-fr.svg" },
+  altlabel: { fr: "English", en: "Français" },
 
   home: { fr: "Accueil", en: "Home" },
   the_practice: { fr: "Le Cabinet", en: "The Practice" },

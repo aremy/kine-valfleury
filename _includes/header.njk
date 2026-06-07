@@ -11,8 +11,11 @@
         <li role="none"><a href="#contact" role="menuitem" class="nav-link">{{ site.contact[lang] }}</a></li>
       </ul>
 
-      <a href="/{{ site.altpath[lang] }}" class="lang-switch" aria-label="{{ site.language_selection[lang] }} – {{ site.altlang[lang] | upper }}">
-        <img src="/img/{{ site.altlang[lang] }}.png" width="24" height="18" alt="{{ site.altlang[lang] | upper }}" loading="lazy">
+      <a href="/{{ site.altpath[lang] }}" class="lang-switch"
+         lang="{{ site.altlang[lang] }}" hreflang="{{ site.altlang[lang] }}"
+         aria-label="{{ site.language_selection[lang] }} – {{ site.altlabel[lang] }}">
+        <img src="/img/{{ site.altflag[lang] }}" width="20" height="14" alt="" aria-hidden="true" class="lang-switch__flag">
+        <span class="lang-switch__code">{{ site.altlang[lang] | upper }}</span>
       </a>
 
       <button class="app-bar__menu-btn" id="menu-btn"
