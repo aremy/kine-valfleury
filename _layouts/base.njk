@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+{% include "head.njk" %}
+<body>
+{% include "header.njk" %}
+{{ content | safe }}
+{% include "footer.njk" %}
+<script src="/assets/js/main.js" defer></script>
+<script>if('serviceWorker'in navigator)navigator.serviceWorker.register('/sw.js');</script>
+</body>
+</html>

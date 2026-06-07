@@ -1,0 +1,46 @@
+<a href="#main-content" class="skip-link">{{ site.skip_to_content[lang] }}</a>
+<header>
+  <nav class="app-bar" id="app-bar" role="navigation" aria-label="{{ site.home[lang] }}">
+    <div class="app-bar__inner">
+      <img src="/img/caducee-transparent.png" width="32" height="32" alt="" aria-hidden="true" class="app-bar__logo">
+      <span class="app-bar__brand visually-hidden">{{ site.physiotherapy_practice[lang] }}</span>
+
+      <ul class="app-bar__nav" id="nav-menu" role="menubar">
+        <li role="none"><a href="#hero" role="menuitem" class="nav-link">{{ site.home[lang] }}</a></li>
+        <li role="none"><a href="#thepractice" role="menuitem" class="nav-link">{{ site.the_practice[lang] }}</a></li>
+        <li role="none"><a href="#contact" role="menuitem" class="nav-link">{{ site.contact[lang] }}</a></li>
+      </ul>
+
+      <a href="/{{ site.altpath[lang] }}" class="lang-switch" aria-label="{{ site.language_selection[lang] }} – {{ site.altlang[lang] | upper }}">
+        <img src="/img/{{ site.altlang[lang] }}.png" width="24" height="18" alt="{{ site.altlang[lang] | upper }}" loading="lazy">
+      </a>
+
+      <button class="app-bar__menu-btn" id="menu-btn"
+              aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </nav>
+
+  {% if not noHero %}
+  <section id="hero" class="hero" aria-label="{{ site.physiotherapy_practice[lang] }}">
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__content">
+      <img src="/img/caducee-masseurkine.webp" width="96" height="96"
+           alt="{{ site.physiotherapy_practice[lang] }}" class="hero__logo" fetchpriority="high">
+      <h1 class="hero__title">{{ site.physiotherapy_practice[lang] }}</h1>
+      <p class="hero__subtitle">{{ site.physiotherapy_title[lang] }}</p>
+      <p class="hero__address">
+        <span class="material-symbols-rounded" aria-hidden="true">location_on</span>
+        {{ site.physiotherapy_address[lang] }}
+      </p>
+      <a href="#contact" class="btn-filled" onclick="trackLink('#contact')">
+        {{ site.make_appointment[lang] }}
+      </a>
+    </div>
+    <a href="#thepractice" class="hero__scroll" aria-label="{{ site.the_practice[lang] }}">
+      <span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_down</span>
+    </a>
+  </section>
+  {% endif %}
+</header>

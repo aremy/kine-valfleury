@@ -1,0 +1,86 @@
+<main id="main-content" tabindex="-1">
+  <!-- The Practice -->
+  <section id="thepractice" aria-label="{{ site.the_practice[lang] }}">
+    <div class="section-wrap">
+      <h2 class="section-title">{{ site.the_practice[lang] }}</h2>
+      <div class="section-rule" aria-hidden="true"></div>
+      <div class="carousel" role="region" aria-label="{{ site.the_practice[lang] }}">
+        <div aria-live="polite" aria-atomic="true" class="visually-hidden" id="carousel-status"></div>
+        <div class="carousel__track" id="carousel-track">
+          <div class="carousel__slide">
+            <img src="/img/waitingroom.webp" alt="{{ site.waitingroom[lang] }}" class="carousel__img">
+          </div>
+          <div class="carousel__slide">
+            <img src="/img/salle1.webp" alt="{{ site.room1[lang] }}" class="carousel__img" loading="lazy">
+          </div>
+          <div class="carousel__slide">
+            <img src="/img/salle2.webp" alt="{{ site.room2[lang] }}" class="carousel__img" loading="lazy">
+          </div>
+          <div class="carousel__slide">
+            <img src="/img/salle3.webp" alt="{{ site.room3[lang] }}" class="carousel__img" loading="lazy">
+          </div>
+        </div>
+        <button class="carousel__btn carousel__btn--prev" id="carousel-prev" aria-label="{{ site.previous[lang] }}">
+          <span class="material-symbols-rounded">chevron_left</span>
+        </button>
+        <button class="carousel__btn carousel__btn--next" id="carousel-next" aria-label="{{ site.next[lang] }}">
+          <span class="material-symbols-rounded">chevron_right</span>
+        </button>
+        <div class="carousel__dots" id="carousel-dots" role="tablist" aria-label="{{ site.the_practice[lang] }}">
+          <button class="carousel__dot active" role="tab" aria-selected="true" data-slide="0" aria-label="{{ site.waitingroom[lang] }}"></button>
+          <button class="carousel__dot" role="tab" aria-selected="false" data-slide="1" aria-label="{{ site.room1[lang] }}"></button>
+          <button class="carousel__dot" role="tab" aria-selected="false" data-slide="2" aria-label="{{ site.room2[lang] }}"></button>
+          <button class="carousel__dot" role="tab" aria-selected="false" data-slide="3" aria-label="{{ site.room3[lang] }}"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" aria-label="{{ site.contact[lang] }}">
+    <div class="section-wrap">
+      <h2 class="section-title">{{ site.contact[lang] }}</h2>
+      <div class="section-rule" aria-hidden="true"></div>
+      <div class="contact-grid">
+        <div class="card">
+          <h3 class="card__title">{{ site.make_appointment[lang] }}</h3>
+          <a href="tel:{{ site.phone_nb_link[lang] }}" class="contact-row contact-row--link">
+            <span class="material-symbols-rounded contact-row__icon" aria-hidden="true">phone</span>
+            <span class="contact-row__text">{{ site.phone_nb[lang] }}</span>
+          </a>
+        </div>
+        <div class="card">
+          <h3 class="card__title">{{ site.getting_there[lang] }}</h3>
+          <a href="https://www.openstreetmap.org/?mlat=48.8076329&mlon=2.2399007#map=17/48.8076329/2.2399007"
+             target="_blank" rel="noopener" class="contact-row contact-row--link">
+            <span class="material-symbols-rounded contact-row__icon" aria-hidden="true">location_on</span>
+            <address class="contact-row__text">
+              10 Avenue Louvois<br>92190 Meudon
+            </address>
+          </a>
+          <div class="contact-row">
+            <span class="material-symbols-rounded contact-row__icon contact-row__icon--muted" aria-hidden="true">train</span>
+            <span class="contact-row__text contact-row__text--muted">RER C Val Fleury</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map -->
+  <section id="map" aria-label="{{ site.getting_there_map[lang] }}">
+    <a href="https://www.openstreetmap.org/?mlat=48.8076329&mlon=2.2399007#map=17/48.8076329/2.2399007"
+       class="visually-hidden" target="_blank" rel="noopener">
+      {{ site.open_map[lang] }}
+    </a>
+    <div class="map-frame">
+      <div class="map-overlay" id="map-overlay" aria-hidden="true"></div>
+      <iframe
+        title="{{ site.getting_there_map[lang] }}"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=2.2370%2C48.8057%2C2.2428%2C48.8096&layer=mapnik&marker=48.8076329%2C2.2399007"
+        loading="lazy"
+        allowfullscreen>
+      </iframe>
+    </div>
+  </section>
+</main>

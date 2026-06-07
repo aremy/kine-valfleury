@@ -1,0 +1,40 @@
+<footer>
+  <div class="footer__inner">
+
+    <div class="footer__col">
+      <p class="footer__heading">{{ site.quick_links[lang] }}</p>
+      <ul class="footer__links">
+        <li><a href="#hero">{{ site.home[lang] }}</a></li>
+        <li><a href="#thepractice">{{ site.the_practice[lang] }}</a></li>
+        <li><a href="#contact">{{ site.contact[lang] }}</a></li>
+        <li><a href="https://www.ordremk.fr" target="_blank" rel="noopener">{{ site.mk_order[lang] }}</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__col">
+      <p class="footer__heading">{{ site.contact[lang] }}</p>
+      <div class="footer__contact-row">
+        <span class="material-symbols-rounded" aria-hidden="true">phone</span>
+        <a href="tel:{{ site.phone_nb_link[lang] }}">{{ site.phone_nb[lang] }}</a>
+      </div>
+      <div class="footer__contact-row">
+        <span class="material-symbols-rounded" aria-hidden="true">location_on</span>
+        <address>10 Avenue Louvois<br>92190 Meudon</address>
+      </div>
+      <div class="footer__contact-row">
+        <span class="material-symbols-rounded" aria-hidden="true">train</span>
+        <span>RER C Val Fleury</span>
+      </div>
+    </div>
+
+    <div class="footer__brand">
+      <img src="/img/caducee-transparent.png" width="40" height="40" alt="" aria-hidden="true" loading="lazy">
+      <p class="footer__brand-name">Andreea Almajan</p>
+      <p class="footer__credential">{{ site.footer_credential[lang] }}</p>
+    </div>
+
+  </div>
+  <div class="footer__bottom">
+    <a href="/{{ site.altpath[lang] }}" aria-label="{{ site.altlang[lang] | upper }} – {{ site.language_selection[lang] }}">{{ site.altlang[lang] | upper }}</a>
+  </div>
+</footer>

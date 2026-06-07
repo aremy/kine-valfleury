@@ -1,9 +1,5 @@
-_site
-.sass-cache
-.jekyll-metadata
-.asset-cache
-Gemfile.lock
- .vscode/
-node_modules
+_site/
+node_modules/
+.vscode/
 .jekyll-cache/
-
+.lighthouseci/

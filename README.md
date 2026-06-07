@@ -1,44 +1,70 @@
-[![Jekyll Site CI](https://github.com/aremy/kine-valfleury/actions/workflows/jekyll.yml/badge.svg?branch=master)](https://github.com/aremy/kine-valfleury/actions/workflows/jekyll.yml)
+# kine-valfleury
 
-Simple website for a physiotherapy practice.
+Static website for a physiotherapy & osteopathy practice in Meudon, France.
+Live: <https://kine-valfleury.fr/>
 
-Used as a playground for:
-* building a one page layout using [bootstrap](http://getbootstrap.com/getting-started/#examples)
-* scripted [Amazon S3](https://aws.amazon.com/fr/s3/) deployment
-* using Jekyll to:
-    * reduce maintenance on multilingual aspects (see also [here](https://www.sylvaindurand.org/making-jekyll-multilingual/))
-    * ["compress"](https://github.com/penibelst/jekyll-compress-html) (minify) the html
-    * explore some other features Jekyll features along the way (constraint, no)
+## Stack
 
-* checking how to achieve [pagespeed](https://developers.google.com/speed/pagespeed/insights/?url=kine-valfleury.fr) optimizations and [google search console](https://www.google.com/webmasters/tools/home?hl=en) recommendations with the above, for mobile & pc usage
+- **[Eleventy](https://www.11ty.dev/) (11ty) v3** — static site generator
+- **Nunjucks** — templates
+- **Plain CSS** — Material Design 3 tokens, no preprocessor
+- **Vanilla JS** — app bar scroll, carousel, mobile menu, GA4 tracking
+- **PWA** — Web App Manifest + Service Worker
+- **AWS S3** (eu-west-2) — static hosting
+- **GitHub Actions** — CI/CD (Node 20, no Docker, no Ruby)
 
 ## Prerequisites
-* Install [Ruby](https://www.ruby-lang.org/en/documentation/installation/)
-* Install [Jekyll](https://jekyllrb.com/docs/quickstart/)
-* Clone the repository
-* [for the S3 deployment] install [Aws cli](http://docs.aws.amazon.com/cli/latest/userguide/installing.html) and [configure it](http://docs.aws.amazon.com/cli/latest/userguide/cli-chap-getting-started.html) with your AWS key
 
-* Install bootsrap4
+- Node.js 20+
+- AWS CLI (for manual deploys only — CI uses OIDC)
 
-** install [Yarn](https://yarnpkg.com/lang/en/docs/install/#windows-stable)
-** `yarn add bootstrap@next`
+## Local development
 
-For the generic approach, see ([how to use bootstrap4 with jekyll from scratch](https://simpleit.rocks/how-to-add-bootstrap-4-to-jekyll-the-right-way/))
-
-
-## Generate
-From the repository:
-* Run `bundle exec jekyll build` to generate `_site` folder containing the files to deploy (the website itself)
+```bash
+npm install
+npm start        # dev server → http://localhost:8080
+npm run build    # outputs to _site/
+```
 
 ## Deploy
-* Run deploy.sh to:
-    * gzip the resources (js, css)
-    * upload to target Amazon S3 bucket with appropriate http headers with which they will be served (cache-control, content-enconding, content-type)
 
+Deployment runs automatically on every push to `master` via GitHub Actions.
 
-## Misc
-* `bundle exec jekyll clean` to clean the site
-* `bundle exec jekyll serve --incremental` to test locally (http://localshot:4000)
-* `bundle update` to update all dependencies
+For a manual deploy (requires AWS credentials):
 
+```bash
+npm run build
+./deploy.sh
+```
 
+`deploy.sh` behaviour:
+
+- Configures the S3 bucket error document (`404.html`)
+- Syncs all assets with `max-age=31536000,immutable` cache headers
+- Uploads `sw.js` and all HTML with `no-cache` headers
+- Re-uploads CSS and JS gzip-compressed
+- Runs a CloudFront invalidation if `CF_DISTRIBUTION_ID` is set
+
+## i18n
+
+All UI strings live in `_data/site.js` as `{ key: { fr: "...", en: "..." } }`.
+Templates access them via `{{ site.key[lang] }}`.
+URL structure: `/` = French, `/en/` = English.
+
+## Structure
+
+```text
+_data/site.js          ← all i18n strings + site settings
+_layouts/base.njk      ← outer HTML shell
+_layouts/home.njk      ← home page layout (extends base)
+_includes/head.njk     ← meta, SEO, PWA, GA4, JSON-LD
+_includes/header.njk   ← nav + hero
+_includes/sections.njk ← practice carousel, contact, map
+_includes/footer.njk   ← links, contact info
+index.njk              ← French page entry
+en/index.njk           ← English page entry
+404.njk                ← 404 error page (bilingual)
+sw.js                  ← Service Worker
+assets/css/main.css    ← MD3 design system
+assets/js/main.js      ← interactive behaviour
+```
