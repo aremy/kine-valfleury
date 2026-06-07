@@ -38,7 +38,7 @@ find _site -name "*.html" | while read -r html; do
   aws s3 cp "$html" "$BUCKET/$key" \
     --region "$REGION" \
     --content-type "text/html; charset=utf-8" \
-    --cache-control "no-cache,no-store,must-revalidate"
+    --cache-control "no-cache,must-revalidate"
 done
 
 # Re-upload CSS and JS gzip-compressed for better transfer performance

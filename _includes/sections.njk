@@ -8,16 +8,32 @@
         <div aria-live="polite" aria-atomic="true" class="visually-hidden" id="carousel-status"></div>
         <div class="carousel__track" id="carousel-track">
           <div class="carousel__slide">
-            <img src="/img/waitingroom.webp" alt="{{ site.waitingroom[lang] }}" class="carousel__img">
+            <img src="/img/waitingroom.webp"
+                 srcset="/img/waitingroom-480w.webp 480w, /img/waitingroom.webp 760w"
+                 sizes="(max-width: 600px) 480px, 760px"
+                 alt="{{ site.waitingroom[lang] }}"
+                 class="carousel__img" width="760" height="428">
           </div>
           <div class="carousel__slide">
-            <img src="/img/salle1.webp" alt="{{ site.room1[lang] }}" class="carousel__img" loading="lazy">
+            <img src="/img/salle1.webp"
+                 srcset="/img/salle1-480w.webp 480w, /img/salle1.webp 760w"
+                 sizes="(max-width: 600px) 480px, 760px"
+                 alt="{{ site.room1[lang] }}"
+                 class="carousel__img" width="760" height="428" loading="lazy">
           </div>
           <div class="carousel__slide">
-            <img src="/img/salle2.webp" alt="{{ site.room2[lang] }}" class="carousel__img" loading="lazy">
+            <img src="/img/salle2.webp"
+                 srcset="/img/salle2-480w.webp 480w, /img/salle2.webp 760w"
+                 sizes="(max-width: 600px) 480px, 760px"
+                 alt="{{ site.room2[lang] }}"
+                 class="carousel__img" width="760" height="428" loading="lazy">
           </div>
           <div class="carousel__slide">
-            <img src="/img/salle3.webp" alt="{{ site.room3[lang] }}" class="carousel__img" loading="lazy">
+            <img src="/img/salle3.webp"
+                 srcset="/img/salle3-480w.webp 480w, /img/salle3.webp 760w"
+                 sizes="(max-width: 600px) 480px, 760px"
+                 alt="{{ site.room3[lang] }}"
+                 class="carousel__img" width="760" height="428" loading="lazy">
           </div>
         </div>
         <button class="carousel__btn carousel__btn--prev" id="carousel-prev" aria-label="{{ site.previous[lang] }}">
