@@ -29,12 +29,12 @@ module.exports = {
     en: "Physiotherapy & Osteopathy Practice",
   },
   physiotherapy_title: {
-    fr: "Andreea Almajan — Kinésithérapeute D.E., Ostéopathe D.O.",
-    en: "Andreea Almajan — Physical Therapist S.D., Osteopath O.D.",
+    fr: "Andreea Almajan - Kinésithérapeute D.E., Ostéopathe D.O.",
+    en: "Andreea Almajan - Physical Therapist S.D., Osteopath O.D.",
   },
   physiotherapy_address: {
-    fr: "Meudon 92190 — RER C Val Fleury",
-    en: "Meudon 92190 — RER C Val Fleury",
+    fr: "Meudon 92190 - RER C Val Fleury",
+    en: "Meudon 92190 - RER C Val Fleury",
   },
   make_appointment: { fr: "Prendre rendez-vous", en: "Make an Appointment" },
 

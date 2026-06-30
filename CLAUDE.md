@@ -1,4 +1,4 @@
-# kine-valfleury — Claude Context
+# kine-valfleury - Claude Context
 
 ## What this project is
 
@@ -12,7 +12,7 @@ Two-language (French + English), single-page layout, zero CMS.
 | --- | --- |
 | SSG | Eleventy (11ty) v3 |
 | Templates | Nunjucks (.njk) |
-| CSS | Plain CSS — Material Design 3 tokens + custom components |
+| CSS | Plain CSS - Material Design 3 tokens + custom components |
 | Icons | Material Symbols Rounded (Google Fonts CDN) |
 | JS | Vanilla JS (App Bar scroll, carousel, mobile menu, GA4 tracking) |
 | Build | GitHub Actions → `npm install && npm run build` (no Docker, no Ruby) |
@@ -73,10 +73,10 @@ npm run build      # produces _site/
 
 **CI/CD (GitHub Actions → push to master):**
 
-1. `actions/setup-node@v4` — Node 20
+1. `actions/setup-node@v4` - Node 20
 2. `npm install`
-3. `npm run build` (`eleventy`) — outputs to `_site/`
-4. `./deploy.sh` — `aws s3 sync` + gzip CSS/JS
+3. `npm run build` (`eleventy`) - outputs to `_site/`
+4. `./deploy.sh` - `aws s3 sync` + gzip CSS/JS
 
 **deploy.sh behaviour:**
 
@@ -104,22 +104,22 @@ Hero overlay colour: `rgba(0, 70, 83, .82)` over the `bg-banner.webp` image.
 - S3 bucket: `kine-valfleury.fr`
 - Region: `eu-west-2` (London)
 - IAM role assumed via GitHub OIDC (no long-lived secrets)
-- No CloudFront yet — S3 website endpoint serves directly (future improvement)
+- No CloudFront yet - S3 website endpoint serves directly (future improvement)
 
 ## Key things to know
 
-- **No SCSS, no Bootstrap, no Ruby, no Docker** — pure Node.js build
+- **No SCSS, no Bootstrap, no Ruby, no Docker** - pure Node.js build
 - Nunjucks `{{ site.key[lang] }}` bracket notation works for all i18n lookups
 - The `sitemaps.xml.njk` front matter has `permalink: /sitemaps.xml` so Eleventy outputs it as XML
 - The carousel uses CSS scroll-snap + vanilla JS (no external library)
-- Images in `/img/original/` are source files — web-ready ones are at `/img/`
+- Images in `/img/original/` are source files - web-ready ones are at `/img/`
 - PWA manifests are static JSON files passthrough-copied by Eleventy
 - Old Jekyll files (Gemfile, `_config.yml`, `_sass/`) have been removed
 
 ## Common tasks
 
 **Change a UI string (both languages):**
-Edit `_data/site.js` — update the `fr` and `en` values for the relevant key.
+Edit `_data/site.js` - update the `fr` and `en` values for the relevant key.
 
 **Update contact info:**
 `_data/site.js` → `phone_nb`, `phone_nb_link`, `physiotherapy_address`.
@@ -128,9 +128,9 @@ Edit `_data/site.js` — update the `fr` and `en` values for the relevant key.
 Replace files in `/img/` (keep WebP format, same filenames).
 
 **Tweak colours / spacing:**
-`assets/css/main.css` — look for the `:root { }` block at the top for MD3 tokens.
+`assets/css/main.css` - look for the `:root { }` block at the top for MD3 tokens.
 
 **Add a new section:**
-Edit `_includes/sections.njk` — add HTML using the existing section pattern.
+Edit `_includes/sections.njk` - add HTML using the existing section pattern.
 Update `_includes/header.njk` to add a nav link if needed.
 Add any new i18n strings to `_data/site.js`.

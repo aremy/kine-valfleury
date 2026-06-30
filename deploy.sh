@@ -5,7 +5,7 @@ BUCKET="s3://kine-valfleury.fr"
 BUCKET_NAME="kine-valfleury.fr"
 REGION="eu-west-2"
 
-# Configure S3 website (index + error document) — idempotent
+# Configure S3 website (index + error document) - idempotent
 aws s3 website "s3://${BUCKET_NAME}/" \
   --index-document index.html \
   --error-document 404.html \
@@ -19,20 +19,20 @@ aws s3 sync _site/ "$BUCKET/" \
   --exclude "*.js" \
   --cache-control "max-age=31536000,immutable"
 
-# JS files — 1-year cache (except sw.js handled separately below)
+# JS files - 1-year cache (except sw.js handled separately below)
 aws s3 sync _site/ "$BUCKET/" \
   --region "$REGION" \
   --exclude "*" \
   --include "assets/js/*.js" \
   --cache-control "max-age=31536000,immutable"
 
-# Service Worker — must never be cached so the browser always checks for updates
+# Service Worker - must never be cached so the browser always checks for updates
 aws s3 cp _site/sw.js "$BUCKET/sw.js" \
   --region "$REGION" \
   --content-type "application/javascript" \
   --cache-control "no-cache,no-store,must-revalidate"
 
-# HTML pages — always fresh, no cache, gzip-compressed (CSS is inlined so pages would be large otherwise)
+# HTML pages - always fresh, no cache, gzip-compressed (CSS is inlined so pages would be large otherwise)
 find _site -name "*.html" | while read -r html; do
   key="${html#_site/}"
   tmpfile=$(mktemp /tmp/kine-html-XXXXXX.gz)
@@ -63,7 +63,7 @@ gzip_upload "_site/assets/js/main.js"   "text/javascript" "assets/js/main.js"
 
 rm -rf /tmp/kine-deploy
 
-# CloudFront invalidation — only runs when CF_DISTRIBUTION_ID is set
+# CloudFront invalidation - only runs when CF_DISTRIBUTION_ID is set
 # Set this as a GitHub Actions secret once CloudFront is configured
 if [ -n "${CF_DISTRIBUTION_ID:-}" ]; then
   echo "Invalidating CloudFront distribution ${CF_DISTRIBUTION_ID}..."

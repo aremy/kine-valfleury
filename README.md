@@ -5,18 +5,18 @@ Live: <https://kine-valfleury.fr/>
 
 ## Stack
 
-- **[Eleventy](https://www.11ty.dev/) (11ty) v3** — static site generator
-- **Nunjucks** — templates
-- **Plain CSS** — Material Design 3 tokens, no preprocessor
-- **Vanilla JS** — app bar scroll, carousel, mobile menu, GA4 tracking
-- **PWA** — Web App Manifest + Service Worker
-- **AWS S3** (eu-west-2) — static hosting
-- **GitHub Actions** — CI/CD (Node 20, no Docker, no Ruby)
+- **[Eleventy](https://www.11ty.dev/) (11ty) v3** - static site generator
+- **Nunjucks** - templates
+- **Plain CSS** - Material Design 3 tokens, no preprocessor
+- **Vanilla JS** - app bar scroll, carousel, mobile menu, GA4 tracking
+- **PWA** - Web App Manifest + Service Worker
+- **AWS S3** (eu-west-2) - static hosting
+- **GitHub Actions** - CI/CD (Node 20, no Docker, no Ruby)
 
 ## Prerequisites
 
 - Node.js 20+
-- AWS CLI (for manual deploys only — CI uses OIDC)
+- AWS CLI (for manual deploys only - CI uses OIDC)
 
 ## Local development
 

@@ -20,7 +20,7 @@
 
       <button class="app-bar__menu-btn" id="menu-btn"
               aria-label="Menu" aria-expanded="false" aria-controls="nav-menu">
-        <span class="material-symbols-rounded" aria-hidden="true">menu</span>
+        <span class="material-symbols-rounded" aria-hidden="true" data-icon="menu"></span>
       </button>
     </div>
   </nav>
@@ -34,7 +34,7 @@
       <h1 class="hero__title">{{ site.physiotherapy_practice[lang] }}</h1>
       <p class="hero__subtitle">{{ site.physiotherapy_title[lang] }}</p>
       <p class="hero__address">
-        <span class="material-symbols-rounded" aria-hidden="true">location_on</span>
+        <span class="material-symbols-rounded" aria-hidden="true" data-icon="location_on"></span>
         {{ site.physiotherapy_address[lang] }}
       </p>
       <a href="#contact" class="btn-filled" onclick="trackLink('#contact')">
@@ -42,7 +42,7 @@
       </a>
     </div>
     <a href="#thepractice" class="hero__scroll" aria-label="{{ site.the_practice[lang] }}">
-      <span class="material-symbols-rounded" aria-hidden="true">keyboard_arrow_down</span>
+      <span class="material-symbols-rounded" aria-hidden="true" data-icon="keyboard_arrow_down"></span>
     </a>
   </section>
   {% endif %}
