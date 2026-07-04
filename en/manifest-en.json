@@ -1,6 +1,7 @@
 {
   "name": "Andreea Almajan Physiotherapist Osteopath Meudon",
   "short_name": "Physio Val Fleury",
+  "description": "Physiotherapy and osteopathy practice in Meudon Val Fleury (92190). Andreea Almajan, physiotherapist and osteopath.",
   "lang": "en",
   "icons": [
     { "src": "../img/caducee-48.png",  "sizes": "48x48",   "type": "image/png", "purpose": "any maskable" },

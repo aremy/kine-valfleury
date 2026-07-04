@@ -7,8 +7,8 @@ module.exports = {
     en: "Andreea Almajan Physiotherapist Osteopath Meudon Issy-les-Moulineaux",
   },
   description: {
-    fr: "Andreea Almajan Kinésithérapeute Ostéopathe Meudon Issy-les-Moulineaux",
-    en: "Andreea Almajan Physiotherapist Osteopath Meudon Issy-les-Moulineaux",
+    fr: "Kinésithérapie et ostéopathie à Meudon Val Fleury (92190). Andreea Almajan, Kinésithérapeute D.E. et Ostéopathe D.O. Prenez rendez-vous au 01 45 34 29 73.",
+    en: "Physiotherapy and osteopathy in Meudon Val Fleury (92190). Andreea Almajan, physiotherapist and osteopath. Book an appointment: +33 1 45 34 29 73.",
   },
   keywords: {
     fr: "kinésithérapeute ostéopathe meudon val-fleury issy-les-moulineaux rendez-vous",

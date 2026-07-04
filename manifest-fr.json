@@ -1,6 +1,7 @@
 {
   "name": "Andreea Almajan Kinésithérapeute Ostéopathe Meudon",
   "short_name": "Kiné Val Fleury",
+  "description": "Cabinet de kinésithérapie et ostéopathie à Meudon Val Fleury (92190). Andreea Almajan, Kinésithérapeute D.E. et Ostéopathe D.O.",
   "lang": "fr",
   "icons": [
     { "src": "img/caducee-48.png",  "sizes": "48x48",   "type": "image/png", "purpose": "any maskable" },
