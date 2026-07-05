@@ -1,6 +1,13 @@
 (function () {
   'use strict';
 
+  /* ---- GA4 helper ----------------------------------------- */
+  function track(name, params) {
+    if (typeof gtag === 'function') {
+      gtag('event', name, Object.assign({ transport_type: 'beacon' }, params || {}));
+    }
+  }
+
   /* ---- Top App Bar scroll ---------------------------------- */
   const appBar = document.getElementById('app-bar');
   if (appBar) {
@@ -51,7 +58,7 @@
   }
 
   /* ---- Image carousel ------------------------------------- */
-  const track  = document.getElementById('carousel-track');
+  const carouselTrack = document.getElementById('carousel-track');
   const prevBtn = document.getElementById('carousel-prev');
   const nextBtn = document.getElementById('carousel-next');
   const dots   = Array.from(document.querySelectorAll('.carousel__dot'));
@@ -62,7 +69,7 @@
 
   function goTo(n) {
     current = (n + count) % count;
-    if (track) track.scrollTo({ left: current * track.offsetWidth, behavior: 'smooth' });
+    if (carouselTrack) carouselTrack.scrollTo({ left: current * carouselTrack.offsetWidth, behavior: 'smooth' });
     dots.forEach((d, i) => {
       const active = i === current;
       d.classList.toggle('active', active);
@@ -82,13 +89,22 @@
     timer = null;
   }
 
-  if (track && count > 0) {
-    prevBtn && prevBtn.addEventListener('click', () => goTo(current - 1));
-    nextBtn && nextBtn.addEventListener('click', () => goTo(current + 1));
-    dots.forEach(d => d.addEventListener('click', () => goTo(+d.dataset.slide)));
+  if (carouselTrack && count > 0) {
+    prevBtn && prevBtn.addEventListener('click', () => {
+      track('carousel_interaction', { method: 'prev' });
+      goTo(current - 1);
+    });
+    nextBtn && nextBtn.addEventListener('click', () => {
+      track('carousel_interaction', { method: 'next' });
+      goTo(current + 1);
+    });
+    dots.forEach(d => d.addEventListener('click', () => {
+      track('carousel_interaction', { method: 'dot' });
+      goTo(+d.dataset.slide);
+    }));
 
     /* Pause on hover or keyboard focus within carousel */
-    const carousel = track.closest('.carousel');
+    const carousel = carouselTrack.closest('.carousel');
     if (carousel) {
       carousel.addEventListener('mouseenter', stopAutoplay);
       carousel.addEventListener('mouseleave', startAutoplay);
@@ -100,10 +116,13 @@
     }
 
     /* Sync dot when user swipes */
-    track.addEventListener('scrollend', () => {
-      if (!track.offsetWidth) return;
-      const slide = Math.round(track.scrollLeft / track.offsetWidth);
-      if (slide !== current) goTo(slide);
+    carouselTrack.addEventListener('scrollend', () => {
+      if (!carouselTrack.offsetWidth) return;
+      const slide = Math.round(carouselTrack.scrollLeft / carouselTrack.offsetWidth);
+      if (slide !== current) {
+        track('carousel_interaction', { method: 'swipe' });
+        goTo(slide);
+      }
     });
 
     startAutoplay();
@@ -126,14 +145,59 @@
     }, { passive: true });
   }
 
-  /* ---- GA4 link tracking ---------------------------------- */
-  window.trackLink = function (label) {
-    if (typeof gtag === 'function') {
-      gtag('event', 'click', {
-        event_category: 'internal_link',
-        event_label: label,
-        transport_type: 'beacon',
+  /* ---- Analytics: section visibility (IntersectionObserver) */
+  if ('IntersectionObserver' in window) {
+    const sectionObs = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          track('section_view', { section_id: entry.target.id });
+          sectionObs.unobserve(entry.target);
+        }
       });
-    }
-  };
+    }, { threshold: 0.3 });
+    ['thepractice', 'contact', 'map'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) sectionObs.observe(el);
+    });
+  }
+
+  /* ---- Analytics: hero CTA click -------------------------- */
+  const heroCta = document.querySelector('.hero .btn-filled');
+  if (heroCta) {
+    heroCta.addEventListener('click', () => track('hero_cta_click'));
+  }
+
+  /* ---- Analytics: phone call (primary conversion) --------- */
+  document.querySelectorAll('a[href^="tel:"]').forEach(a => {
+    a.addEventListener('click', () => {
+      const source = a.closest('#contact') ? 'contact_section'
+                   : a.closest('footer')   ? 'footer'
+                   : 'other';
+      track('clicked_appointment', { call_source: source });
+    });
+  });
+
+  /* ---- Analytics: nav link clicks ------------------------- */
+  document.querySelectorAll('.nav-link').forEach(a => {
+    a.addEventListener('click', () => {
+      const href = a.getAttribute('href') || '';
+      const section = href.split('#')[1] || href;
+      track('nav_click', { section });
+    });
+  });
+
+  /* ---- Analytics: language switch ------------------------- */
+  const langSwitch = document.querySelector('.lang-switch');
+  if (langSwitch) {
+    langSwitch.addEventListener('click', () => {
+      track('language_switch', { from_lang: document.documentElement.lang });
+    });
+  }
+
+  /* ---- Analytics: external links -------------------------- */
+  document.querySelectorAll('a[target="_blank"]').forEach(a => {
+    a.addEventListener('click', () => {
+      track('external_link_click', { destination: a.hostname });
+    });
+  });
 }());
