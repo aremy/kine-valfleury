@@ -1,17 +1,19 @@
 <a href="#main-content" class="skip-link">{{ site.skip_to_content[lang] }}</a>
 <header>
-  <nav class="app-bar" id="app-bar" role="navigation" aria-label="{{ site.home[lang] }}">
+  <nav class="app-bar{% if noHero %} app-bar--opaque{% endif %}" id="app-bar" role="navigation" aria-label="{{ site.home[lang] }}">
     <div class="app-bar__inner">
       <img src="/img/caducee-transparent.png" width="32" height="32" alt="" aria-hidden="true" class="app-bar__logo">
       <span class="app-bar__brand visually-hidden">{{ site.physiotherapy_practice[lang] }}</span>
 
+      {% set homeBase = '/' if lang == 'fr' else '/en/' %}
       <ul class="app-bar__nav" id="nav-menu" role="menubar">
-        <li role="none"><a href="#hero" role="menuitem" class="nav-link">{{ site.home[lang] }}</a></li>
-        <li role="none"><a href="#thepractice" role="menuitem" class="nav-link">{{ site.the_practice[lang] }}</a></li>
-        <li role="none"><a href="#contact" role="menuitem" class="nav-link">{{ site.contact[lang] }}</a></li>
+        <li role="none"><a href="{{ homeBase }}#hero" role="menuitem" class="nav-link">{{ site.home[lang] }}</a></li>
+        <li role="none"><a href="{{ homeBase }}#thepractice" role="menuitem" class="nav-link">{{ site.the_practice[lang] }}</a></li>
+        <li role="none"><a href="{{ homeBase }}#contact" role="menuitem" class="nav-link">{{ site.contact[lang] }}</a></li>
+        <li role="none"><a href="{{ homeBase }}blog/" role="menuitem" class="nav-link">{{ site.articles[lang] }}</a></li>
       </ul>
 
-      <a href="/{{ site.altpath[lang] }}" class="lang-switch"
+      <a href="{{ altUrl if altUrl else '/' + site.altpath[lang] }}" class="lang-switch"
          lang="{{ site.altlang[lang] }}" hreflang="{{ site.altlang[lang] }}"
          aria-label="{{ site.language_selection[lang] }} – {{ site.altlabel[lang] }}">
         <img src="/img/{{ site.altflag[lang] }}" width="20" height="14" alt="" aria-hidden="true" class="lang-switch__flag">

@@ -57,6 +57,13 @@ module.exports = {
     en: "Order of Physiotherapists (french)",
   },
 
+  articles: { fr: "Articles", en: "Articles" },
+  articles_subtitle: { fr: "Conseils & Actualités", en: "Advice & News" },
+  read_more: { fr: "Lire l'article", en: "Read the article" },
+  published_on: { fr: "Publié le", en: "Published on" },
+  back_to_articles: { fr: "Tous les articles", en: "All articles" },
+  no_articles: { fr: "Aucun article pour l'instant.", en: "No articles yet." },
+
   manifest: { fr: "/manifest-fr.json", en: "/en/manifest-en.json" },
   language_selection: { fr: "Sélection de Langue", en: "Language Selection" },
   open_map: { fr: "Ouvrir dans OpenStreetMap", en: "Open in OpenStreetMap" },

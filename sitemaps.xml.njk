@@ -16,4 +16,36 @@ eleventyExcludeFromCollections: true
     <xhtml:link rel="alternate" hreflang="fr" href="{{ site.url }}/" />
     <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/" />
   </url>
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="{{ site.url }}/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/blog/" />
+  </url>
+  <url>
+    <loc>{{ site.url }}/en/blog/</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="{{ site.url }}/blog/" />
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}/en/blog/" />
+  </url>
+  {%- for post in collections.post %}
+  {%- if post.data.lang == 'fr' %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | dateISO }}</lastmod>
+    {%- if post.data.altUrl %}
+    <xhtml:link rel="alternate" hreflang="fr" href="{{ site.url }}{{ post.url }}" />
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ post.data.altUrl }}" />
+    {%- endif %}
+  </url>
+  {%- endif %}
+  {%- if post.data.lang == 'en' %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <lastmod>{{ post.date | dateISO }}</lastmod>
+    {%- if post.data.altUrl %}
+    <xhtml:link rel="alternate" hreflang="en" href="{{ site.url }}{{ post.url }}" />
+    <xhtml:link rel="alternate" hreflang="fr" href="{{ site.url }}{{ post.data.altUrl }}" />
+    {%- endif %}
+  </url>
+  {%- endif %}
+  {%- endfor %}
 </urlset>

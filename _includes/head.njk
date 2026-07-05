@@ -2,23 +2,23 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <title>{{ site.title[lang] }}</title>
-  <meta name="description" content="{{ site.description[lang] }}">
+  <title>{% if title %}{{ title }} — Kine Val Fleury{% else %}{{ site.title[lang] }}{% endif %}</title>
+  <meta name="description" content="{{ description or site.description[lang] }}">
   <meta name="keywords" content="{{ site.keywords[lang] }}">
   <meta name="theme-color" content="#006874">
 
   <!-- Canonical + hreflang -->
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
   <link rel="alternate" hreflang="{{ lang }}" href="{{ site.url }}{{ page.url }}">
-  <link rel="alternate" hreflang="{{ site.altlang[lang] }}" href="{{ site.url }}/{{ site.altpath[lang] }}">
+  <link rel="alternate" hreflang="{{ site.altlang[lang] }}" href="{{ site.url }}{{ altUrl if altUrl else '/' + site.altpath[lang] }}">
   <link rel="alternate" hreflang="x-default" href="{{ site.url }}/">
 
   <!-- Open Graph -->
-  <meta property="og:type" content="website">
+  <meta property="og:type" content="{{ 'article' if tags and 'post' in tags else 'website' }}">
   <meta property="og:locale" content="{% if lang == 'fr' %}fr_FR{% else %}en_GB{% endif %}">
   <meta property="og:url" content="{{ site.url }}{{ page.url }}">
-  <meta property="og:title" content="{{ site.title[lang] }}">
-  <meta property="og:description" content="{{ site.description[lang] }}">
+  <meta property="og:title" content="{{ title or site.title[lang] }}">
+  <meta property="og:description" content="{{ description or site.description[lang] }}">
   <meta property="og:image" content="{{ site.url }}/img/caducee-masseurkine-profile.webp">
   <meta property="og:image:width" content="400">
   <meta property="og:image:height" content="400">
@@ -26,8 +26,8 @@
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="{{ site.title[lang] }}">
-  <meta name="twitter:description" content="{{ site.description[lang] }}">
+  <meta name="twitter:title" content="{{ title or site.title[lang] }}">
+  <meta name="twitter:description" content="{{ description or site.description[lang] }}">
   <meta name="twitter:image" content="{{ site.url }}/img/caducee-masseurkine-profile.webp">
 
   <!-- Icons + PWA -->
@@ -97,6 +97,29 @@
     }
   }
   </script>
+
+  {% if tags and 'post' in tags %}
+  <!-- Structured data: Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": {{ title | dump }},
+    "description": {{ description | dump }},
+    "url": "{{ site.url }}{{ page.url }}",
+    "datePublished": "{{ date | dateISO }}",
+    "inLanguage": "{{ lang }}-{% if lang == 'fr' %}FR{% else %}GB{% endif %}",
+    "author": {
+      "@type": "Person",
+      "name": "Andreea Almajan"
+    },
+    "publisher": {
+      "@type": "MedicalBusiness",
+      "@id": "{{ site.url }}/#practice"
+    }
+  }
+  </script>
+  {% endif %}
 
   <!-- Google Analytics - loaded after page to keep it off the critical path -->
   <script>

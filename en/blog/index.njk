@@ -1,0 +1,35 @@
+---
+layout: base.njk
+lang: en
+noHero: true
+altUrl: /blog/
+title: Articles
+description: Physiotherapy and osteopathy advice, health news, by Andreea Almajan in Meudon Val Fleury.
+permalink: /en/blog/
+---
+<main id="main-content">
+  <section class="blog-wrap section-wrap">
+    <h1 class="section-title">{{ site.articles[lang] }}</h1>
+    <p class="blog-subtitle">{{ site.articles_subtitle[lang] }}</p>
+    <div class="section-rule"></div>
+    <ul class="article-list" role="list">
+      {% set enPosts = collections.post | reverse %}
+      {% for post in enPosts %}
+        {% if post.data.lang == 'en' %}
+        <li class="article-card">
+          <a href="{{ post.url }}" class="article-card__link">
+            <div class="article-card__meta">
+              <time datetime="{{ post.date | dateISO }}">{{ post.date | readableDate('en') }}</time>
+            </div>
+            <h2 class="article-card__title">{{ post.data.title }}</h2>
+            <p class="article-card__excerpt">{{ post.data.description }}</p>
+            <span class="article-card__more">{{ site.read_more[lang] }} →</span>
+          </a>
+        </li>
+        {% endif %}
+      {% else %}
+      <li>{{ site.no_articles[lang] }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+</main>

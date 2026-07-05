@@ -4,9 +4,11 @@
     <div class="footer__col">
       <p class="footer__heading">{{ site.quick_links[lang] }}</p>
       <ul class="footer__links">
-        <li><a href="#hero">{{ site.home[lang] }}</a></li>
-        <li><a href="#thepractice">{{ site.the_practice[lang] }}</a></li>
-        <li><a href="#contact">{{ site.contact[lang] }}</a></li>
+        {% set homeBase = '/' if lang == 'fr' else '/en/' %}
+        <li><a href="{{ homeBase }}#hero">{{ site.home[lang] }}</a></li>
+        <li><a href="{{ homeBase }}#thepractice">{{ site.the_practice[lang] }}</a></li>
+        <li><a href="{{ homeBase }}#contact">{{ site.contact[lang] }}</a></li>
+        <li><a href="{{ homeBase }}blog/">{{ site.articles[lang] }}</a></li>
         <li><a href="https://www.ordremk.fr" target="_blank" rel="noopener">{{ site.mk_order[lang] }}</a></li>
       </ul>
     </div>
